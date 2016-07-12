@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Series generator</title>
+</head>
+
+<body ng-app="seriesApp"
+      ng-controller="MainCtrl as vm">
+    <form>
+        <div>Series: {{ vm.series }}</div>
+        <table>
+            <tr><td>&nbsp;</td></tr>
+        </table>
+
+        <table>
+            <tr>
+                <td>No. of elements in series:</td>
+                <td>
+                    <div>
+                        <input type="text"
+                               placeholder="Term "
+                               ng-model="vm.userData.maxSeriesTerm">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Divisor:</td>
+                <td>
+                    <div>
+                        <input type="text"
+                               placeholder="Divisor "
+                               ng-model="vm.userData.divisor">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Index:</td>
+                <td>
+                    <div>
+                        <input type="text"
+                               placeholder="Index "
+                               ng-model="vm.userData.nIndex">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        <button type="submit"
+                                ng-click="vm.loadSeries()">
+                            Generate Series
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        <button type="submit"
+                                ng-click="vm.findElement()">
+                            Find Element
+                        </button>
+                    </div>
+                </td>
+                <td><div>Result: {{ vm.resultElement }}</div></td>
+            </tr>
+        </table>
+        <div>{{vm.message}}</div>
+        <div>{{vm.stateMessage}}</div>
+    </form>
+
+
+    <!-- Library Scripts -->
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-resource.js"></script>
+
+    <!-- Application Script -->
+    <script src="app_scripts/app.js"></script>
+    <script src="app_scripts/MainCtrl.js"></script>
+
+    <!-- Services -->
+    <script src="common_scripts/common.service.js"></script>
+    <script src="common_scripts/seriesResource.js"></script>
+    <script src="common_scripts/findSeriesElement.js"></script>
+
+</body>
+
+</html>
